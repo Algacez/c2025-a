@@ -1,9 +1,11 @@
-#include <printf.h>
+#include <stdio.h>
 #include <time.h>
 
+#define MAXN 1000
+
 int main() {
-    int start = 2;
-    int end = 1000;
+    int prime[MAXN];
+    int isComposite[MAXN] = {0};
     int count = 0;
 
     clock_t start_time, end_time;
@@ -11,25 +13,18 @@ int main() {
 
     start_time = clock();
 
-    for (int i = start; i <= end; ++i)
-    {
-        int isPrime = 1;
-
-        for (int j = 2; j * j <= i; ++j)
-        {
-            if (i % j == 0)
-            {
-                isPrime = 0;
-                break;
-            }
-        }
-
-        if (isPrime == 1)
-        {
+    for (int i = 2; i <= MAXN; i++) {
+        if (!isComposite[i]) {
+            prime[count++] = i;
             printf("%d\n", i);
-            count++;
+        }
+        for (int j = 0; j < count && i * prime[j] <= MAXN; j++) {
+            isComposite[i * prime[j]] = 1;
+            if (i % prime[j] == 0)
+                break;
         }
     }
+
     printf("2-1000有 %d 个质数", count);
 
     end_time = clock();
