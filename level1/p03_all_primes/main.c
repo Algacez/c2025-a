@@ -5,7 +5,7 @@
 
 int main() {
     int prime[MAXN];
-    int isComposite[MAXN] = {0};
+    int isComposite[MAXN+1] = {0};
     int count = 0;
 
     clock_t start_time, end_time;
@@ -21,7 +21,7 @@ int main() {
         for (int j = 0; j < count && i * prime[j] <= MAXN; j++) {
             isComposite[i * prime[j]] = 1;
             if (i % prime[j] == 0)
-                break;
+                break; //保证一个合数只被标记一次
         }
     }
 
