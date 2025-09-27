@@ -6,7 +6,7 @@
 
 typedef struct Node {
     int data;
-    struct Node* next;
+    struct Node* next; //指向同一类型(struct Node)结构体的指针
 } Node;
 
 typedef struct {
@@ -24,8 +24,8 @@ void insert(LinkedList* list, int data)
 {
     Node* newnode = (Node*)malloc(sizeof(Node));
     newnode -> data = data;
-    newnode -> next = list -> head;
-    list -> head = newnode;
+    newnode -> next = list -> head;  //新节点就连接到了链表的现有部分之前
+    list -> head = newnode;  //新节点成为了链表的新头部
     list -> length++;
 }
 
