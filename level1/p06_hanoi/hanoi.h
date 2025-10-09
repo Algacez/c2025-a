@@ -1,8 +1,6 @@
-//
-// Created by Rock Zhang on 2025/9/29.
-//
+#ifndef HANOI_H
+#define HANOI_H
 
-#ifndef C2025_CHALLENGE_HANOI_H
-#define C2025_CHALLENGE_HANOI_H
+void hanoi(int n, char A, char B, char C);
 
-#endif //C2025_CHALLENGE_HANOI_H
+#endif
