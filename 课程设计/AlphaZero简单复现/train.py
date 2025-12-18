@@ -306,7 +306,7 @@ class TrainPipeline():
     def log_training_complete(self):
         """记录训练完成"""
         self.logger.info("="*60)
-        self.logger.info("五子棋训练完成 (10x10)!")
+        self.logger.info("五子棋训练完成 (9x9)!")
         self.logger.info(f"总训练批次: {self.current_batch}")
         self.logger.info(f"最佳胜率: {self.best_win_ratio:.2f}")
         self.logger.info("="*60)
@@ -431,7 +431,7 @@ if __name__ == '__main__':
         args.log_file = os.path.join(args.log_dir, f"training_log_{timestamp}.log")
 
     print("="*60)
-    print("AlphaZero 五子棋训练程序 (10x10)")
+    print("AlphaZero 五子棋训练程序 (9x9)")
     print("="*60)
 
     if args.resume:
